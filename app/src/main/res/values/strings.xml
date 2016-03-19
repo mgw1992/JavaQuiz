@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JavaQuiz</string>
+    <string name="action_settings">Settings</string>
+    <string name="modulus">The modulus operator (%) in Java can be used only with variables of integer type</string>
+</resources>
