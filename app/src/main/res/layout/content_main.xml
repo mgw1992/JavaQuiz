@@ -80,4 +80,20 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="49dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Answer"
+        android:id="@+id/show_answer_button"
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cheat"
+        android:id="@+id/cheat_button"
+        android:layout_below="@+id/show_answer_button"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

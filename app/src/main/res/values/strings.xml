@@ -10,4 +10,12 @@
     <string name="switchstatment">The "switch" selection structure must end with the default case</string>
     <string name="breakstatment">A break statement must always be present in the default case of a "switch" selection structure</string>
     <string name="congratulations_toast">Congratulations!!!</string>
+    <string name="warning_text">Are you sure you want to do this?</string>
+    <string name="show_answer_button">Show Answer</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgment_toast">Cheating is wrong.</string>
+    <string name="next_button" />
+    <string name="true_button" />
+    <string name="false_button" />
+
 </resources>
