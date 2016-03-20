@@ -16,6 +16,9 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "QuizActivity";
+    private static final String KEY_INDEX = "index";
+
+    int counter = 0;
 
     private Button button;
     private Button button2;
@@ -84,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         R.string.incorrect_toast,
                         Toast.LENGTH_SHORT).show();
+                counter--;
+
             }
         });
 
@@ -94,6 +99,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,
                     R.string.correct_toast,
                     Toast.LENGTH_SHORT).show();
+
+            counter++;
+
+        if (counter == 5) {
+            Toast.makeText(MainActivity.this,
+                    R.string.congratulations_toast,
+                    Toast.LENGTH_SHORT).show();
+
+        }
                 }
         });
 
@@ -117,7 +131,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (savedInstanceState != null) {
+            mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+        }
+
         updateQuestion();
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -133,6 +152,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG, "onSaveInstanceState");
+        savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

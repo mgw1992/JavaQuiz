@@ -9,4 +9,5 @@
     <string name="bitwise">All bitwise operations are carried out with the same level of precedence in Java</string>
     <string name="switchstatment">The "switch" selection structure must end with the default case</string>
     <string name="breakstatment">A break statement must always be present in the default case of a "switch" selection structure</string>
+    <string name="congratulations_toast">Congratulations!!!</string>
 </resources>
