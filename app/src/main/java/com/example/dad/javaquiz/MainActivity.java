@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
             new Question(R.string.bitwise, false),
             new Question(R.string.switchstatment, false),
             new Question(R.string.breakstatment, false),
+            new Question(R.string.variables, false),
+            new Question(R.string.arraystorage, false),
+            new Question(R.string.passingarrayelements, true),
     };
 
     private int mCurrentIndex = 0;

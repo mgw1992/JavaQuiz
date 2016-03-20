@@ -18,16 +18,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Status"
+        android:id="@+id/status_button"
+        android:layout_gravity="center_vertical" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="true_button"
         android:id="@+id/true_button"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="center_vertical" />
 
     <Button
         android:layout_width="142dp"
         android:layout_height="wrap_content"
         android:text="false_button"
-        android:id="@+id/false_button"
-        android:layout_gravity="center_vertical" />
+        android:id="@+id/false_button" />
 
     <TextView
         android:id="@+id/answer_text_view"

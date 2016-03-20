@@ -34,6 +34,7 @@ public class CheatActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient mClient;
+    private Button status_button;
 
 
     public static Intent newIntent(Context packageContext, boolean answerIsTrue) {
@@ -133,6 +134,17 @@ public class CheatActivity extends AppCompatActivity {
         }
         mIsCheater = false;
         updateQuestion();
+
+
+        status_button = (Button) findViewById(R.id.status_button);
+        status_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CheatActivity.this,
+                        R.string.status_toast,
+                        Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
