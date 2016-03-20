@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button;
     private Button button2;
     private Button button3;
+    private Button button4;
     private TextView question_text_view;
 
     private Question[] mQuestionBank = new Question[] {
@@ -67,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
+            }
+        });
+
+        updateQuestion();
+
+        button4 = (Button) findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
                 updateQuestion();
             }
         });
