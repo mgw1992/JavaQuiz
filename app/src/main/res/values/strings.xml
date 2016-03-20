@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">JavaQuiz</string>
     <string name="action_settings">Settings</string>
-    <string name="modulus">The modulus operator (%) in Java can be used only with variables of integer type</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="button3">Next</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="modulus">The modulus operator (%) in Java can be used only with variables of integer type.</string>
     <string name="declarations">Declarations must appear at the start of the body of a Java method</string>
     <string name="bitwise">All bitwise operations are carried out with the same level of precedence in Java</string>
     <string name="switchstatment">The "switch" selection structure must end with the default case</string>
-    <string name="correct_toast">Correct!</string>
-    <string name="incorrect_toast">Incorrect!</string>
+    <string name="breakstatment">A break statement must always be present in the default case of a "switch" selection structure</string>
 </resources>

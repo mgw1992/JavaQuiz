@@ -10,17 +10,37 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
     private Button button2;
+    private Button button3;
+    private TextView question_text_view;
+
+    private Question[] mQuestionBank = new Question[] {
+            new Question(R.string.modulus, false),
+            new Question(R.string.declarations, false),
+            new Question(R.string.bitwise, false),
+            new Question(R.string.switchstatment, false),
+            new Question(R.string.breakstatment, false),
+    };
+
+    private int mCurrentIndex = 0;
+
+    private void updateQuestion() {
+        int question = mQuestionBank[mCurrentIndex].getTextResId();
+        question_text_view.setText(question);
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        question_text_view = (TextView) findViewById(R.id.question_text_view);
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -42,8 +62,20 @@ public class MainActivity extends AppCompatActivity {
                 }
         });
 
+        button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
+            }
+        });
+
+        updateQuestion();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+            setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
