@@ -50,10 +50,13 @@ public class CheatActivity extends AppCompatActivity {
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
     private static final int REQUEST_CODE_CHEAT = 0;
+    int cheatcounter = 0;
 
     private Button mNextButton;
     private Button mCheatButton;
+    private Button button6;
     private TextView question_text_view;
+    private TextView cheat_status_text_view;
 
     private Question[] mQuestionBank = new Question[]{
             new Question(R.string.modulus, false),
@@ -69,6 +72,11 @@ public class CheatActivity extends AppCompatActivity {
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         question_text_view.setText(question);
+    }
+
+    private void cheatStatus() {
+        CharSequence cheatStatus = "You cheated on " + cheatcounter + " questions";
+        cheat_status_text_view.setText(cheatStatus);
     }
 
     private void checkAnswer(boolean userPressedTrue) {
@@ -101,6 +109,7 @@ public class CheatActivity extends AppCompatActivity {
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
 
         mAnswerTextView = (TextView) findViewById(R.id.answer_text_view);
+        cheat_status_text_view = (TextView) findViewById(R.id.cheat_status_text_View);
 
         mShowAnswer = (Button) findViewById(R.id.show_answer_button);
         mShowAnswer.setOnClickListener(new View.OnClickListener() {
@@ -123,9 +132,10 @@ public class CheatActivity extends AppCompatActivity {
                 Toast.makeText(CheatActivity.this,
                         R.string.judgment_toast,
                         Toast.LENGTH_LONG).show();
-                boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
-                Intent i = CheatActivity.newIntent(CheatActivity.this, answerIsTrue);
-                startActivityForResult(i, REQUEST_CODE_CHEAT);
+                cheatcounter++;
+                //boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
+               // Intent i = CheatActivity.newIntent(CheatActivity.this, answerIsTrue);
+                //startActivityForResult(i, REQUEST_CODE_CHEAT);
             }
         });
 
@@ -135,16 +145,24 @@ public class CheatActivity extends AppCompatActivity {
         mIsCheater = false;
         updateQuestion();
 
-
-        status_button = (Button) findViewById(R.id.status_button);
-        status_button.setOnClickListener(new View.OnClickListener(){
+        button6 = (Button) findViewById(R.id.button6);
+        button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CheatActivity.this,
-                        R.string.status_toast,
-                        Toast.LENGTH_LONG).show();
+                cheatStatus();
             }
         });
+
+
+        //status_button = (Button) findViewById(R.id.status_button);
+        //status_button.setOnClickListener(new View.OnClickListener(){
+          //  @Override
+            //public void onClick(View v) {
+              //  Toast.makeText(CheatActivity.this,
+                //        R.string.status_toast,
+                  //      Toast.LENGTH_LONG).show();
+            //}
+        //});
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.

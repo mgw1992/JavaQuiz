@@ -18,18 +18,26 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import org.w3c.dom.Text;
+
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
 
     int counter = 0;
+    int cheatcounter = 0;
 
     private Button button;
     private Button button2;
     private Button button3;
     private Button button4;
+    private Button button5;
+    private Button button6;
     private TextView question_text_view;
+    private TextView status_text_view;
+    private TextView cheat_status_text_view;
 
     private Question[] mQuestionBank = new Question[]{
             new Question(R.string.modulus, false),
@@ -52,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         question_text_view.setText(question);
+    }
+
+    private void quizStatus() {
+      CharSequence Status =  "You answered " + counter +  " questions correctly";
+        status_text_view.setText(Status);
+    }
+
+    private void cheatStatus() {
+        CharSequence cheatStatus = "You cheated on " + cheatcounter + " questions";
+        cheat_status_text_view.setText(cheatStatus);
     }
 
     @Override
@@ -124,6 +142,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         question_text_view = (TextView) findViewById(R.id.question_text_view);
+        status_text_view = (TextView) findViewById(R.id.status_text_view);
+        cheat_status_text_view = (TextView) findViewById(R.id.cheat_status_text_View);
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -147,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
                 counter++;
 
-                if (counter == 5) {
+                if (counter == 8) {
                     Toast.makeText(MainActivity.this,
                             R.string.congratulations_toast,
                             Toast.LENGTH_SHORT).show();
@@ -169,6 +189,8 @@ public class MainActivity extends AppCompatActivity {
 
         updateQuestion();
 
+
+
         button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,6 +205,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         updateQuestion();
+
+        button5 = (Button) findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizStatus();
+            }
+        });
+
+        button6 = (Button) findViewById(R.id.button6);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cheatStatus();
+            }
+        });
+
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
