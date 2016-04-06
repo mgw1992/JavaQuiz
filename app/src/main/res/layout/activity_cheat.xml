@@ -9,8 +9,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dad.javaquiz.CheatActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/show_answer_button"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_answer_button"
+        android:layout_gravity="center_vertical"/>
+
+    <TextView
+        android:layout_width="264dp"
         android:layout_height="wrap_content"
         android:padding="24dp"
         android:text="@string/warning_text"/>
@@ -41,12 +48,6 @@
         android:layout_height="wrap_content"
         android:padding="24dp"
         tools:text="Answer"/>
-
-    <Button
-        android:id="@+id/show_answer_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/show_answer_button"/>
 
     <Button
         android:id="@+id/cheat_button"
