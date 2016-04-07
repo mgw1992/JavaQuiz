@@ -34,7 +34,7 @@ public class CheatActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient mClient;
-    private Button status_button;
+
 
 
     public static Intent newIntent(Context packageContext, boolean answerIsTrue) {
@@ -50,11 +50,12 @@ public class CheatActivity extends AppCompatActivity {
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
     private static final int REQUEST_CODE_CHEAT = 0;
-    int cheatcounter = 0;
+    private int cheatcounter = 0;
 
     private Button mNextButton;
     private Button mCheatButton;
     private Button button6;
+    private Button status_button;
     private TextView question_text_view;
     private TextView cheat_status_text_view;
 
@@ -131,8 +132,12 @@ public class CheatActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(CheatActivity.this,
                         R.string.judgment_toast,
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
                 cheatcounter++;
+                boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
+                Intent i = CheatActivity.newIntent(CheatActivity.this, answerIsTrue);
+                startActivityForResult(i, REQUEST_CODE_CHEAT);
+
                 //boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
                // Intent i = CheatActivity.newIntent(CheatActivity.this, answerIsTrue);
                 //startActivityForResult(i, REQUEST_CODE_CHEAT);

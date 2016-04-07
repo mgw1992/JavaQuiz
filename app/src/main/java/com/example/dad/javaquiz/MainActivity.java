@@ -14,6 +14,8 @@ import android.widget.Toast;
 import android.widget.TextView;
 import android.util.Log;
 
+import com.example.dad.javaquiz.CheatActivity;
+
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -26,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
 
+
+
     int counter = 0;
-    int cheatcounter = 0;
+    private int cheatcounter = 0;
 
     private Button button;
     private Button button2;
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button4;
     private Button button5;
     private Button button6;
+    private Button cheat_button;
     private TextView question_text_view;
     private TextView status_text_view;
     private TextView cheat_status_text_view;
@@ -221,6 +226,17 @@ public class MainActivity extends AppCompatActivity {
                 cheatStatus();
             }
         });
+
+        cheat_button = (Button) findViewById(R.id.cheat_button);
+        cheat_button.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+             Toast.makeText(MainActivity.this,
+             R.string.judgment_toast,
+             Toast.LENGTH_SHORT).show();
+             }
+        });
+
 
 
 
