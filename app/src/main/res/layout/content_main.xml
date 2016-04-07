@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="True"
-        android:id="@+id/button"
+        android:id="@+id/true_button"
         android:layout_marginTop="98dp"
         android:layout_below="@+id/question_text_view"
         android:layout_alignParentLeft="true"
@@ -37,48 +37,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="False"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        android:id="@+id/false_button"
+        android:layout_alignTop="@+id/true_button"
+        android:layout_toRightOf="@+id/true_button"
+        android:layout_toEndOf="@+id/true_button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2" />
+        android:id="@+id/next_button"
+        android:layout_below="@+id/false_button"
+        android:layout_alignLeft="@+id/false_button"
+        android:layout_alignStart="@+id/false_button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Previous"
-        android:id="@+id/button4"
-        android:layout_alignTop="@+id/button3"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button" />
+        android:id="@+id/previous_button"
+        android:layout_alignTop="@+id/next_button"
+        android:layout_alignRight="@+id/true_button"
+        android:layout_alignEnd="@+id/true_button" />
 
     <android.support.v7.widget.ButtonBarLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/view"
-        android:layout_alignTop="@+id/button3"
+        android:layout_alignTop="@+id/next_button"
         android:layout_centerHorizontal="true" />
 
     <android.support.v7.widget.ButtonBarLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/view2"
-        android:layout_alignTop="@+id/button"
+        android:layout_alignTop="@+id/true_button"
         android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/next_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="49dp" />
@@ -97,15 +97,15 @@
         android:layout_height="wrap_content"
         android:text="Cheat"
         android:id="@+id/cheat_button"
-        android:layout_below="@+id/button"
-        android:layout_toLeftOf="@+id/button4"
-        android:layout_toStartOf="@+id/button4"/>
+        android:layout_below="@+id/true_button"
+        android:layout_toLeftOf="@+id/previous_button"
+        android:layout_toStartOf="@+id/previous_button"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="QuizStatus"
-        android:id="@+id/button5"
+        android:id="@+id/quiz_status_button"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/view"
         android:layout_alignEnd="@+id/view"
@@ -116,9 +116,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/status_text_view"
-        android:layout_above="@+id/button5"
-        android:layout_alignRight="@+id/button3"
-        android:layout_alignEnd="@+id/button3"/>
+        android:layout_above="@+id/quiz_status_button"
+        android:layout_alignRight="@+id/next_button"
+        android:layout_alignEnd="@+id/next_button"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cheat Status"
-        android:id="@+id/button6"
+        android:id="@+id/cheat_status_button"
         android:layout_alignTop="@+id/cheat_status_text_View"
         android:layout_alignRight="@+id/question_text_view"
         android:layout_alignEnd="@+id/question_text_view"/>

@@ -17,10 +17,19 @@
         android:layout_gravity="center_vertical"/>
 
     <TextView
-        android:layout_width="264dp"
+        android:layout_width="262dp"
         android:layout_height="wrap_content"
         android:padding="24dp"
-        android:text="@string/warning_text"/>
+        android:text="@string/warning_text"
+        />
+
+    <TextView
+        android:id="@+id/answer_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        tools:text="Answer"
+        android:layout_gravity="bottom"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -41,13 +50,6 @@
         android:layout_height="wrap_content"
         android:text="false_button"
         android:id="@+id/false_button" />
-
-    <TextView
-        android:id="@+id/answer_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="24dp"
-        tools:text="Answer"/>
 
     <Button
         android:id="@+id/cheat_button"
